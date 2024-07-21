@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        rotationXClamp = Mathf.Clamp((rotationX * PlayerCamera.Xsencibility) + transform.rotation.x , -90 , 75);
-        transform.localRotation = Quaternion.Euler((rotationX * PlayerCamera.Xsencibility) - transform.rotation.x, transform.rotation.y, transform.rotation.z);
+        rotationXClamp += Mathf.Clamp(rotationX * PlayerCamera.Xsencibility , -90 , 75);
+        transform.localRotation = Quaternion.Euler(rotationXClamp , 0, 0);
     }
 }
